@@ -1,4 +1,4 @@
-@use 'vars';
+@import 'vars';
 
 .OrderItem{
     display: grid;
@@ -14,14 +14,14 @@
     width: 70px;
     height: 70px;
     border-radius: 20px;
-    border: 1px solid var(--very-light-pink);
+    border: 1px solid $--very-light-pink;
     object-fit: cover;
 }
 .OrderItem p:nth-child(2){
-    color: var(--very-light-pink);
+    color: $--very-light-pink;
 }
 .OrderItem p:nth-child(3){
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
 }
 .OrderItem img:nth-child(4){

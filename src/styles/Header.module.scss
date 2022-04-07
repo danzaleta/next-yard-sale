@@ -1,77 +1,82 @@
-@use 'vars';
+@import 'vars';
 
-nav{
+.Nav {
     display: flex;
     height: 60px;
     padding: 0 24px;
-    border-bottom: 1px solid var(--very-light-pink);
+    border-bottom: 1px solid $--very-light-pink;
     justify-content: space-between;
 }
 
-.menu{
+.menu {
     width: 30px;
     display: none;
 }
 
 .menu-logo {
-	width: 100px;
+    width: 100px;
 }
 
-.navbar-left{
+.navbar-left {
     display: flex;
 }
-.navbar-left .logo{
+
+.navbar-left .logo {
     width: 120px;
 }
 
-.navbar-left ul{
-    margin-left: 32px !important; 
+.navbar-left ul {
+    margin-left: 32px !important;
 }
+
 .navbar-left ul,
-.navbar-right ul{
+.navbar-right ul {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
     align-items: center;
 }
+
 .navbar-left ul li a,
-.navbar-right ul li a{
+.navbar-right ul li a {
     padding: 8px;
     text-decoration: none;
-    color: var(--very-light-pink);
-    border: 1px solid var(--white);
+    color: $--very-light-pink;
+    border: 1px solid $--white;
     border-radius: 8px;
 }
+
 .navbar-left ul li a:hover,
-.navbar-right ul li a:hover{
-    color: var(--hospital-green);
-    border: 1px solid var(--hospital-green);
+.navbar-right ul li a:hover {
+    color: $--hospital-green;
+    border: 1px solid $--hospital-green;
 }
 
-.navbar-right{
+.navbar-right {
     display: flex;
     align-items: center;
 }
 
-.navbar-email{
+.navbar-email {
     margin-right: 24px;
-    color: var(--very-light-pink);
-    font-size: var(--sm);
+    color: $--very-light-pink;
+    font-size: $--sm;
 }
 
-.navbar-shopping-cart{
+.navbar-shopping-cart {
     position: relative;
 }
-.navbar-shopping-cart div{
+
+.navbar-shopping-cart div {
     width: 16px;
     height: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--hospital-green);
+    background-color: $--hospital-green;
     border-radius: 50%;
-    font-size: var(--sm);
+    font-size: $--sm;
     font-weight: bold;
     position: absolute;
     top: -6px;
@@ -79,15 +84,15 @@ nav{
 }
 
 @media (max-width: 640px) {
-    .menu{
+    .menu {
         display: block;
     }
 
-    .navbar-left ul{
+    .navbar-left ul {
         display: none;
     }
-    
-    .navbar-email{
+
+    .navbar-email {
         display: none;
     }
 }

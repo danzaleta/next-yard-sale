@@ -1,4 +1,4 @@
-@use 'vars';
+@import 'vars';
 
 .MyOrder{
     width: 360px;
@@ -6,11 +6,11 @@
     right: 0;
     padding: 24px;
     box-sizing: border-box;
-    background-color: var(--white);
+    background-color: $--white;
     top: 60px;
     bottom: 0;
     border-radius: 6px;
-    border: 1px solid var(--very-light-pink);
+    border: 1px solid $--very-light-pink;
 }
 
 .title-container{
@@ -21,7 +21,7 @@
     margin-right: 20px;
 }
 .title-container p{
-    font-size: var(--lg);
+    font-size: $--lg;
     font-weight: bold;
 }
 
@@ -33,7 +33,7 @@
     margin-bottom: 24px;
     border-radius: 8px;
     padding: 0 24px;
-    background-color: var(--text-input-field);
+    background-color: $--text-input-field;
 }
 .order p:nth-child(1){
     display: flex;
@@ -44,24 +44,24 @@
     font-weight: bolder;
 }
 .order p span:nth-child(1){
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
 }
 .order p span:nth-child(2){
-    font-size: var(--sm);
-    color: var(--very-light-pink);
+    font-size: $--sm;
+    color: $--very-light-pink;
 }
 
 .primary-button{
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
     width: 100%;
     height: 52px;
     border-radius: 8px;
     border: none;
-    color: var(--white);
+    color: $--white;
     cursor: pointer;
-    background-color: var(--hospital-green);
+    background-color: $--hospital-green;
 }
 
 @media (max-width: 640px) {
