@@ -1,0 +1,86 @@
+@use 'vars';
+
+.SendEmail{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.form-container{
+    width: 300px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+}
+
+.logo{
+    width: 150px;
+    display: none;
+    margin-bottom: 48px;
+    justify-self: center;
+}
+
+.title{
+    font-size: var(--lg);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.subtitle{
+    font-size: var(--md);
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 32px;
+    color: var(--very-light-pink);
+}
+
+.email-img{
+    width: 132px;
+    height: 132px;
+    margin-bottom: 24px;
+    border-radius: 50%;
+    background-color: var(--text-input-field);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.email-img img{
+    width: 80px;
+}
+
+.primary-button{
+    font-size: var(--md);
+    font-weight: bold;
+    height: 52px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    background-color: var(--hospital-green);
+}
+
+.login-button{
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.resend{
+    font-size: var(--sm);
+    font-weight: bold;
+}
+.resend span{
+    color: var(--very-light-pink);
+}
+.resend a{
+    color: var(--hospital-green);
+    text-decoration: none;
+}
+
+@media (max-width: 640px){
+    .logo{
+        display: block;
+    }
+}
