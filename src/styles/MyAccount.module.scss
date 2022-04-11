@@ -1,4 +1,4 @@
-@use 'vars';
+@import 'vars';
 
 .MyAccount{
     width: 100%;
@@ -21,7 +21,7 @@
 }
 
 .title{
-    font-size: var(--lg);
+    font-size: $--lg;
     text-align: start;
     margin-bottom: 40px;
 }
@@ -36,27 +36,26 @@
 }
 
 .label{
-    font-size: var(--sm);
+    font-size: $--sm;
     font-weight: bold;
     margin-bottom: 4px;
 }
 
 .value{
-    color: var(--very-light-pink);
+    color: $--very-light-pink;
     margin: 8px 0 32px 0;
-    font-size: var(--md);
+    font-size: $--md;
 }
 
 .secondary-button{
-    font-size: var(--md);
-    font-weight: bold;
+    font-size: $--md;
     height: 52px;
     width: 100%;
     border-radius: 8px;
-    border: 1px solid var(--hospital-green);
-    color: var(--hospital-green);
+    border: 1px solid $--hospital-green;
+    color: $--hospital-green;
     cursor: pointer;
-    background-color: var(--white);
+    background-color: $--white;
 }
 .login-button{
     margin-top: 28px;

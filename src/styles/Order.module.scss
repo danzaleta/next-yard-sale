@@ -1,4 +1,4 @@
-@use 'vars';
+@import 'vars';
 
 .Order{
     display: grid;
@@ -16,10 +16,10 @@
     font-weight: bolder;
 }
 .Order p span:nth-child(1){
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
 }
 .Order p span:nth-child(2){
-    font-size: var(--sm);
-    color: var(--very-light-pink);
+    font-size: $--sm;
+    color: $--very-light-pink;
 }

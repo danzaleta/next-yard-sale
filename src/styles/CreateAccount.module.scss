@@ -1,4 +1,4 @@
-@use 'vars';
+@import 'vars';
 
 .CreateAccount{
     width: 100%;
@@ -21,7 +21,7 @@
 }
 
 .title{
-    font-size: var(--lg);
+    font-size: $--lg;
     text-align: start;
     margin-bottom: 40px;
 }
@@ -36,19 +36,19 @@
 }
 
 .label{
-    font-size: var(--sm);
+    font-size: $--sm;
     font-weight: bold;
     margin-bottom: 4px;
 }
 
 .input{
-    font-size: var(--md);
+    font-size: $--md;
     height: 30px;
     margin-bottom: 8px;
     padding: 8px;
     border: none;
     border-radius: 8px;
-    background-color: var(--text-input-field);
+    background-color: $--text-input-field;
 }
 .input-name,
 .input-email,
@@ -57,15 +57,15 @@
 }
 
 .primary-button{
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
     height: 52px;
     width: 100%;
     border-radius: 8px;
     border: none;
-    color: var(--white);
+    color: $--white;
     cursor: pointer;
-    background-color: var(--hospital-green);
+    background-color: $--hospital-green;
 }
 .login-button{
     margin-top: 28px;
@@ -73,15 +73,15 @@
 }
 
 .secondary-button{
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
     height: 52px;
     width: 100%;
     border-radius: 8px;
-    border: 1px solid var(--hospital-green);
-    color: var(--hospital-green);
+    border: 1px solid $--hospital-green;
+    color: $--hospital-green;
     cursor: pointer;
-    background-color: var(--white);
+    background-color: $--white;
 }
 .signup-button{
     margin-top: 28px;
