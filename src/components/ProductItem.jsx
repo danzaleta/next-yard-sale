@@ -9,7 +9,7 @@ const ProductItem = ({ product }) => {
 
   const handleClick = (item) => {
     addToCart(item);
-  }
+  };
 
   return (
     <div className={styles.ProductItem}>
