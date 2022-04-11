@@ -1,4 +1,4 @@
-@use 'vars';
+@import 'vars';
 
 .ProductItem{
     width: 240px;
@@ -28,12 +28,12 @@
     margin: 0;
     margin-bottom: 4px;
     font-weight: bold;
-    font-size: var(--md);
+    font-size: $--md;
 }
 .product-info div p:nth-child(2){
     margin: 0;
-    font-size: var(--sm);
-    color: var(--very-light-pink);
+    font-size: $--sm;
+    color: $--very-light-pink;
 }
 
 @media (max-width: 640px) {
