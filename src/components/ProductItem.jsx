@@ -13,10 +13,10 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className={styles.ProductItem}>
-      <img
+      <Image
         src={product.images[0]}
         alt={product.title}
-        
+        width={240} height={240}
       />
       <div className={styles['product-info']}>
         <div>
