@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import OrderItem from '@components/OrderItem';
-import AppContext from '@context/AppContext'
+import AppContext from '@context/AppContext';
 import arrow from '@icons/flechita.svg';
 import styles from '@styles/MyOrder.module.scss';
 
