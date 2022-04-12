@@ -21,36 +21,42 @@ const Header = () => {
     <nav className={styles.Nav}>
       <Image src={menu} alt="menu" className={styles.menu} />
       <div className={styles['navbar-left']}>
-        <Link href='/'>
+        <Link href="/" passHref>
           <Image src={logo} alt="logo" className={styles['menu-logo']} />
         </Link>
         <ul>
           <li>
-            <a href="/">All</a>
+            <Link href="/">All</Link>
           </li>
           <li>
-            <a href="/">Clothes</a>
+            <Link href="/">Clothes</Link>
           </li>
           <li>
-            <a href="/">Electronics</a>
+            <Link href="/">Electronics</Link>
           </li>
           <li>
-            <a href="/">Furnitures</a>
+            <Link href="/">Furnitures</Link>
           </li>
           <li>
-            <a href="/">Toys</a>
+            <Link href="/">Toys</Link>
           </li>
           <li>
-            <a href="/">Others</a>
+            <Link href="/">Others</Link>
           </li>
         </ul>
       </div>
       <div className={styles['navbar-right']}>
         <ul>
-          <li className={styles['navbar-email']} onClick={handleToggle}>
+          <li className={styles['navbar-email']}
+            onClick={() => handleToggle()}
+            onKeyPress={() => handleToggle()}
+            aria-hidden="true">
             user@email.com
           </li>
-          <li className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)}>
+          <li className={styles['navbar-shopping-cart']}
+            onClick={() => setToggleOrders(!toggleOrders)}
+            onKeyPress={() => setToggleOrders(!toggleOrders)}
+            aria-hidden="true">
             <Image src={shoppingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>

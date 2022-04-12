@@ -4,9 +4,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>Yard Sale | NextJS ecommerce</title>
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />
