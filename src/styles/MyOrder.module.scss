@@ -2,16 +2,16 @@
 
 .MyOrder{
     width: 360px;
-    position: absolute;
-    right: 0;
     padding: 24px;
     box-sizing: border-box;
+    position: fixed;
+    right: 0;
     background-color: $--white;
     top: 60px;
     bottom: 0;
     border-radius: 6px;
     border: 1px solid $--very-light-pink;
-    z-index: 10;
+    z-index: 1;
 }
 
 .title-container{
