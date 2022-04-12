@@ -1,9 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  images:{
-    domains: ['placeimg.com', 'api.lorem.space'],
-  }
-}
+const withPWA = require('next-pwa');
 
-module.exports = nextConfig
+module.exports = withPWA({
+  pwa: {
+    dest: 'public',
+    register: true,
+    mode: 'production',
+    disable: false,
+  },
+  reactStrictMode: true,
+  images: {
+    domains: ['placeimg.com', 'api.lorem.space'],
+  },
+});
