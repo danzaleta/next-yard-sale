@@ -11,6 +11,8 @@ const ProductItem = ({ product }) => {
     addToCart(item);
   };
 
+  console.log(product.images[0]);
+  
   return (
     <div className={styles.ProductItem}>
       {product.images[0] && <Image src={product.images[0]} alt={product.title} width={240} height={240} />}
