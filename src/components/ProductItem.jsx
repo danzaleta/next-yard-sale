@@ -1,28 +1,37 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
 import AppContext from "@context/AppContext";
 import addToCartImg from '@icons/bt_add_to_cart.svg';
+import addedToCartImg from '@icons/bt_added_to_cart.svg';
 import styles from "@styles/ProductItem.module.scss";
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, indexValue }) => {
+
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2
+  });
+
   const { addToCart } = useContext(AppContext);
+  const [added, setAdded] = useState(false);
+
 
   const handleClick = (item) => {
     addToCart(item);
+    setAdded(true);
   };
 
-  console.log(product.images[0]);
-  
   return (
     <div className={styles.ProductItem}>
       {product.images[0] && <Image src={product.images[0]} alt={product.title} width={240} height={240} />}
       <div className={styles['product-info']}>
         <div>
-          <p>${product.price}</p>
           <p>{product.title}</p>
+          <p>USD {formatter.format(product.price)}</p>
         </div>
-        <figure onClick={() => handleClick(product)} onKeyPress={() => handleClick(product)} aria-hidden="true">
-          <Image src={addToCartImg} alt="add" width={35} height={35} />
+        <figure onClick={() => handleClick(product, indexValue)} onKeyPress={() => handleClick(product, indexValue)} aria-hidden="true">
+          <Image src={(!added)?addToCartImg:addedToCartImg} alt="add" width={35} height={35} layout="fixed" />
         </figure>
       </div>
     </div>
