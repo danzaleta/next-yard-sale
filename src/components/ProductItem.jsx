@@ -25,7 +25,7 @@ const ProductItem = ({ product, indexValue }) => {
 
   return (
     <div className={styles.ProductItem}>
-      {product.images[0] && <Image src={(product.images[0].match(/https:/))?product.images[0]:closeImg} alt={product.title} width={240} height={240} />}
+      {product.images[0] && <Image src={(product.images[0].match(/https/))?product.images[0]:closeImg} alt={product.title} width={240} height={240} />}
       <div className={styles['product-info']}>
         <div>
           <p>{product.title}</p>

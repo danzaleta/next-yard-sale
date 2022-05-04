@@ -5,7 +5,7 @@
     "scope": "/",
     "start_url": "/",
     "name": "Yard Sale | NextJS ecommerce",
-    "short_name": "ys-nextJS",
+    "short_name": "Yard Sale",
     "icons": [
         {
             "src": "/icon-192x192.png",

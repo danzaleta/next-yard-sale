@@ -14,7 +14,6 @@
 }
 
 .menu {
-    width: 30px;
     display: none;
 }
 
@@ -93,7 +92,8 @@
 
 @media (max-width: 640px) {
     .menu {
-        display: block;
+        display: flex;
+        align-items: center;
     }
 
     .navbar-left ul {
