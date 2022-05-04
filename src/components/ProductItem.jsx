@@ -3,6 +3,7 @@ import Image from "next/image";
 import AppContext from "@context/AppContext";
 import addToCartImg from '@icons/bt_add_to_cart.svg';
 import addedToCartImg from '@icons/bt_added_to_cart.svg';
+import closeImg from '@icons/icon_close.png';
 import styles from "@styles/ProductItem.module.scss";
 
 const ProductItem = ({ product, indexValue }) => {
@@ -24,7 +25,7 @@ const ProductItem = ({ product, indexValue }) => {
 
   return (
     <div className={styles.ProductItem}>
-      {product.images[0] && <Image src={product.images[0]} alt={product.title} width={240} height={240} />}
+      {product.images[0] && <Image src={(product.images[0].match(/https:/))?product.images[0]:closeImg} alt={product.title} width={240} height={240} />}
       <div className={styles['product-info']}>
         <div>
           <p>{product.title}</p>
