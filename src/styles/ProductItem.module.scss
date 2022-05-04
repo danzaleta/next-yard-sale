@@ -9,6 +9,7 @@
     height: 240px;
     border-radius: 10px;
     object-fit: cover;
+    background-color: $--text-input-field;
 }
 
 .product-info{
@@ -24,6 +25,7 @@
 .product-info figure img{
     width: 35px;
     height: 35px;
+    background-color:unset;
 }
 
 .product-info div p:nth-child(2){

@@ -20,6 +20,7 @@
 
 .menu-logo {
     width: 100px;
+    cursor: pointer;
 }
 
 .navbar-left {
@@ -67,10 +68,12 @@
     margin-right: 24px;
     color: $--very-light-pink;
     font-size: $--sm;
+    cursor: pointer;
 }
 
 .navbar-shopping-cart {
     position: relative;
+    cursor: pointer;
 }
 
 .navbar-shopping-cart div {
