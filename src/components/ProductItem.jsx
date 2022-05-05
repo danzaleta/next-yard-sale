@@ -25,14 +25,16 @@ const ProductItem = ({ product, indexValue }) => {
 
   return (
     <div className={styles.ProductItem}>
-      {product.images[0] && <Image src={(product.images[0].match(/https/))?product.images[0]:closeImg} alt={product.title} width={240} height={240} />}
+      <div className={styles['img-container']}>
+        {product.images[0] && <Image src={(product.images[0].match(/https/)) ? product.images[0] : closeImg} alt={product.title} width={240} height={240} />}
+      </div>
       <div className={styles['product-info']}>
         <div>
-          <p>{product.title}</p>
           <p>USD {formatter.format(product.price)}</p>
+          <p>{product.title}</p>
         </div>
         <figure onClick={() => handleClick(product, indexValue)} onKeyPress={() => handleClick(product, indexValue)} aria-hidden="true">
-          <Image src={(!added)?addToCartImg:addedToCartImg} alt="add" width={35} height={35} layout="fixed" />
+          <Image src={(!added) ? addToCartImg : addedToCartImg} alt="add" width={35} height={35} layout="fixed" />
         </figure>
       </div>
     </div>
