@@ -1,6 +1,6 @@
 @import 'vars';
 
-.Menu{
+.Menu {
     width: 100px;
     height: auto;
     padding: 20px 20px 0 20px;
@@ -14,29 +14,136 @@
     z-index: 1;
     box-sizing: unset;
 }
-.Menu ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.Menu ul li{
+
+.Menu ul li {
     text-align: end;
 }
-.Menu ul li:nth-child(1),
-.Menu ul li:nth-child(2){
+
+.Menu ul li a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: $--dark;
+    text-decoration: none;
+}
+.Menu ul:first-child li a {
+    color: $--very-light-pink;
+    font-weight: 400;
+    border: 1px solid $--white;
+    border-radius: 8px;
+    padding: 8px;
+}
+.Menu ul:first-child li a:hover {
+    color: $--hospital-green;
+    border: 1px solid $--hospital-green;
+}
+
+.categories {
+    display: none;
+    border-bottom: 1px solid $--very-light-pink;
+}
+
+.categories li p {
+    margin: 0;
+}
+
+.categories,
+.user {
     font-weight: bold;
 }
-.Menu ul li:last-child{
+
+.categories,
+.user,
+.sign-out {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.email {
+    display: none;
+    font-size: $--sm;
+    font-weight: lighter;
+    color: $--dark;
+}
+
+.sign-out li:last-child {
     padding-top: 20px;
     border-top: 1px solid $--very-light-pink;
 }
-.Menu ul li:last-child a{
+
+.sign-out li:last-child a {
     color: $--hospital-green;
     font-size: $--sm;
 }
-.Menu ul li a{
-    display: inline-block;
-    margin-bottom: 20px;
-    color: $--black;
-    text-decoration: none;
+
+@media (max-width: 640px) {
+    .Menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 16px;
+        position: fixed;
+        right: 0;
+        top: 60px;
+        bottom: 0;
+        box-sizing: border-box;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    
+
+    .categories {
+        display: block;
+    }
+    .categories li {
+        margin-bottom: 16px;
+    }
+
+    .user {
+        margin-top: 32px;
+    }
+    .user li {
+        margin-bottom: 32px;
+    }
+
+    .Menu ul li {
+        text-align: start;
+    }
+
+    .Menu ul li:last-child {
+        border: none;
+    }
+
+    .Menu ul li a {
+        margin-bottom: 0;
+    }
+
+    .email {
+        display: block;
+    }
+
+    .sign-out {
+        position: absolute;
+        margin-bottom: 32px;
+        bottom: 0;
+    }
+
+    .sign-out li {
+        margin-bottom: 4px;
+        padding-top: 0;
+    }
+
+    .sign-out li p {
+        margin: 0;
+    }
+
+    .sign-out li:last-child{
+        font-size: $--sm;
+        font-weight: normal;
+        color: $--hospital-green;
+        padding: 0;
+        margin: 0;
+    }
 }
