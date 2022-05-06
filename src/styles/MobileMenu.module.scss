@@ -1,0 +1,70 @@
+@import 'vars';
+
+.MobileMenu {
+    display: none;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    position: fixed;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    background-color: #FFFFFF;
+    z-index: 1;
+}
+
+.MobileMenu ul {
+    margin: 32px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.MobileMenu ul:nth-child(1) {
+    border-bottom: 1px solid $--very-light-pink;
+}
+
+.MobileMenu ul:last-child {
+    position: absolute;
+    margin-bottom: 32px;
+    bottom: 0;
+}
+
+.MobileMenu ul li {
+    margin-bottom: 32px;
+}
+
+.MobileMenu ul:last-child li {
+    margin: 0 0 4px 0;
+}
+
+.MobileMenu ul li a {
+    text-decoration: none;
+    color: $--black;
+    font-size: $--md;
+    font-weight: bold;
+}
+.MobileMenu ul:nth-child(1) li a{
+    color: $--hospital-green;
+}
+.MobileMenu ul:nth-child(1) li:nth-child(1) a{
+    color: $--black;
+}
+
+.email {
+    font-size: $--sm;
+    font-weight: lighter;
+    color: $--dark;
+}
+
+.MobileMenu ul:last-child li:last-child a {
+    font-size: $--sm;
+    font-weight: normal;
+    color: $--hospital-green;
+}
+
+@media (max-width: 640px) {
+    .MobileMenu {
+        display: flex;
+        flex-direction: column;
+    }
+}
