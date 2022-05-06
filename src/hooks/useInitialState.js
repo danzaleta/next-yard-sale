@@ -6,7 +6,10 @@ const InitialState = {
 
 const useInitialState = () => {
   const [state, setState] = useState(InitialState);
-
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleOrders, setToggleOrders] = useState(false);
+  const [toggleAccount, setToggleAccount] = useState(false);
+  
   const addToCart = (payload) => {
     setState({
       ...state,
@@ -25,6 +28,12 @@ const useInitialState = () => {
     state,
     addToCart,
     removeFromCart,
+    toggleMenu,
+    toggleOrders,
+    toggleAccount,
+    setToggleMenu,
+    setToggleOrders,
+    setToggleAccount,
   };
 };
 

@@ -1,8 +1,9 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Menu from "@components/Menu";
+import MobileMenu from "./MobileMenu";
 import MyOrder from "@containers/MyOrder";
+import Menu from "@components/Menu";
 import menu from "@icons/icon_menu.svg";
 import logo from "@logos/logo_yard_sale.svg";
 import AppContext from "@context/AppContext";
@@ -10,16 +11,32 @@ import shoppingCart from "@icons/icon_shopping_cart.svg";
 import styles from '@styles/Header.module.scss';
 
 const Header = () => {
-  const [toggle, setToggle] = useState(false);
-  const [toggleOrders, setToggleOrders] = useState(false);
-  const { state } = useContext(AppContext);
-  const handleToggle = () => {
-    setToggle(!toggle);
-  };
+
+  const {
+    state,
+    toggleMenu,
+    toggleOrders,
+    toggleAccount,
+    setToggleMenu,
+    setToggleOrders,
+    setToggleAccount,
+  } = useContext(AppContext);
+
+  const categories = [
+    'All',
+    'Clothes',
+    'Electronics',
+    'Furnitures',
+    'Toys',
+    'Others',
+  ];
 
   return (
     <nav className={styles.Nav}>
-      <div className={styles.menu}>
+      <div className={styles.menu}
+        onClick={() => setToggleMenu(!toggleMenu)}
+        onKeyPress={() => setToggleMenu(!toggleMenu)}
+        aria-hidden="true">
         <Image src={menu} alt="menu" width={25} height={25} />
       </div>
       <div className={styles['navbar-left']}>
@@ -28,30 +45,15 @@ const Header = () => {
         </Link>
         <ul>
           <li>
-            <Link href="/">All</Link>
-          </li>
-          <li>
-            <Link href="/">Clothes</Link>
-          </li>
-          <li>
-            <Link href="/">Electronics</Link>
-          </li>
-          <li>
-            <Link href="/">Furnitures</Link>
-          </li>
-          <li>
-            <Link href="/">Toys</Link>
-          </li>
-          <li>
-            <Link href="/">Others</Link>
+            {categories.map((category, index)=>(<Link href="/" key={index}>{category}</Link>))}
           </li>
         </ul>
       </div>
       <div className={styles['navbar-right']}>
         <ul>
           <li className={styles['navbar-email']}
-            onClick={() => handleToggle()}
-            onKeyPress={() => handleToggle()}
+            onClick={() => setToggleAccount(!toggleAccount)}
+            onKeyPress={() => setToggleAccount(!toggleAccount)}
             aria-hidden="true">
             user@email.com
           </li>
@@ -64,7 +66,8 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      {toggle && <Menu />}
+      {toggleMenu && <MobileMenu />}
+      {toggleAccount && <Menu />}
       {toggleOrders && <MyOrder />}
     </nav>
   );
