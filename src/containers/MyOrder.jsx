@@ -43,7 +43,7 @@ const MyOrder = () => {
                     </p>
                 </div>
                 <Link href='/checkout' passHref>
-                    <button className={styles['primary-button']}>
+                    <button disabled={(state.cart.length > 0) ? false : true} className={styles['primary-button']}>
                         Checkout
                     </button>
                 </Link>

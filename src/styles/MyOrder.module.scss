@@ -1,7 +1,7 @@
 @import 'vars';
 
-.MyOrder{
-    width: 360px;
+.MyOrder {
+    width: 440px;
     padding: 16px;
     box-sizing: border-box;
     position: fixed;
@@ -9,34 +9,37 @@
     top: 60px;
     bottom: 0;
     background-color: $--white;
-    border-radius: 6px;
-    border: 1px solid $--very-light-pink;
     z-index: 1;
     display: flex;
     flex-direction: column;
+    border: 1px solid $--very-light-pink;
+    border-radius: 6px;
 }
 
-.title-container{
+.title-container {
     display: flex;
     justify-content: flex-start;
     gap: 20px;
 }
-.title-container img{
+
+.title-container img {
     transform: rotate(180deg);
+    cursor: pointer;
 }
-.title-container p{
+
+.title-container p {
     font-size: $--lg;
     font-weight: bold;
 }
 
-.my-order-content{
+.my-order-content {
     height: 300px;
-    overflow: scroll;
+    overflow-y: auto;
     height: -webkit-fill-available;
     padding: 10px;
 }
 
-.order{
+.order {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 16px;
@@ -46,24 +49,28 @@
     padding: 0 24px;
     background-color: $--text-input-field;
 }
-.order p:nth-child(1){
+
+.order p:nth-child(1) {
     display: flex;
     flex-direction: column;
 }
-.order p:nth-child(2){
+
+.order p:nth-child(2) {
     text-align: end;
     font-weight: bolder;
 }
-.order p span:nth-child(1){
+
+.order p span:nth-child(1) {
     font-size: $--md;
     font-weight: bold;
 }
-.order p span:nth-child(2){
+
+.order p span:nth-child(2) {
     font-size: $--sm;
     color: $--very-light-pink;
 }
 
-.primary-button{
+.primary-button {
     font-size: $--md;
     font-weight: bold;
     width: 100%;
@@ -74,9 +81,14 @@
     cursor: pointer;
     background-color: $--hospital-green;
 }
+.primary-button:disabled{
+    background-color: $--very-light-pink;
+}
 
 @media (max-width: 640px) {
-    .MyOrder{
+    .MyOrder {
         width: 100%;
+        border: none;
+        border-radius: 0;
     }
 }
