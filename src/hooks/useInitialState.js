@@ -6,6 +6,7 @@ const InitialState = {
 
 const useInitialState = () => {
   const [state, setState] = useState(InitialState);
+  const [logged, setLogged] = useState(true);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
   const [toggleAccount, setToggleAccount] = useState(false);
@@ -34,6 +35,8 @@ const useInitialState = () => {
     setToggleMenu,
     setToggleOrders,
     setToggleAccount,
+    logged,
+    setLogged,
   };
 };
 

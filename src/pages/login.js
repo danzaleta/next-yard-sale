@@ -1,11 +1,14 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import logo from '@logos/logo_yard_sale.svg';
 import styles from '@styles/Login.module.scss';
 
 const Login = () => {
   const form = useRef(null);
+  const router = useRouter();
+
   const handleSubmit = () => {
     const formData = new FormData(form.current);
     const data = {
@@ -13,6 +16,7 @@ const Login = () => {
       password: formData.get('password'),
     };
     console.log(data);
+    router.push('/');
   };
 
   return (
@@ -29,9 +33,9 @@ const Login = () => {
           </label>
           <input type="password" placeholder="********" name="password" className={`${styles.input} ${styles['input-password']}`} />
           <input type="button" value="Login" className={`${styles['primary-button']} ${styles['login-button']}`} onClick={handleSubmit} />
-          <Link href="/">Forgot my password</Link>
+          <Link href="/password-recovery">Forgot my password</Link>
           <button type="button" className={`${styles['secondary-button']} ${styles['signup-button']}`}>
-            Sign up
+            <Link href="/signup">Sign up</Link>
           </button>
         </form>
       </div>

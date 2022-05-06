@@ -1,14 +1,7 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useState } from "react";
 
 const useAccount = () => {
     const [logged, setLogged] = useState(true);
-    const router = useRouter();
-
-    useEffect(() => {
-        router.push('/');
-        console.log(logged);
-    }, []);
 
     const login = (email, password) => {
         console.log(email);
