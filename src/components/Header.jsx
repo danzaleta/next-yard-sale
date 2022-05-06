@@ -6,6 +6,7 @@ import MyOrder from "@containers/MyOrder";
 import Menu from "@components/Menu";
 import menu from "@icons/icon_menu.svg";
 import logo from "@logos/logo_yard_sale.svg";
+import arrow from '@icons/flechita.svg';
 import AppContext from "@context/AppContext";
 import shoppingCart from "@icons/icon_shopping_cart.svg";
 import styles from '@styles/Header.module.scss';
@@ -55,7 +56,7 @@ const Header = () => {
             onClick={() => setToggleAccount(!toggleAccount)}
             onKeyPress={() => setToggleAccount(!toggleAccount)}
             aria-hidden="true">
-            user@email.com
+            user@email.com <Image src={arrow} alt="arrow" width={10} height={10}/>
           </li>
           <li className={styles['navbar-shopping-cart']}
             onClick={() => setToggleOrders(!toggleOrders)}

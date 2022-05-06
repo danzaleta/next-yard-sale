@@ -67,7 +67,12 @@
     margin-right: 24px;
     color: $--very-light-pink;
     font-size: $--sm;
+    display: flex;
+    gap: 10px;
     cursor: pointer;
+}
+.navbar-email img{
+    transform: rotate(90deg);
 }
 
 .navbar-shopping-cart {
