@@ -29,6 +29,11 @@ const Header = () => {
     'Others',
   ];
 
+  const hangleToggle = ()=>{
+    toggleOrders && setToggleOrders(!toggleOrders);
+    toggleMenu && setToggleMenu(!toggleMenu);
+  };
+
   return (
     <nav className={styles.Nav}>
       <div className={styles.menu}
@@ -45,7 +50,7 @@ const Header = () => {
       </div>
       <div className={styles['navbar-left']}>
         <Link href="/" passHref>
-          <Image src={logo} alt="logo" className={styles['menu-logo']} />
+          <Image onClick={()=>hangleToggle()} src={logo} alt="logo" className={styles['menu-logo']} />
         </Link>
         <ul>
           <li>
