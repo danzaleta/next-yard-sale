@@ -1,20 +1,31 @@
-import React from 'react';
 import Image from 'next/image';
-import styles from'@styles/Order.module.scss';
-
+import Link from 'next/link';
+import styles from '@styles/Order.module.scss';
 import arrow from '@icons/flechita.svg';
 
-const Order = () => {
+const Order = ({order, indexValue}) => {
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+    });
+
+    const sumTotal = () => {
+        const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+        const sum = order.products.reduce(reducer, 0);
+        return sum;
+    };
+
     return (
         <div className={styles.Order}>
             <p>
-                <span>03.25.22</span>
-                <span>6 aticles</span>
+                <span>{order.date}</span>
+                <span>{order.products.length} aticles</span>
             </p>
-            <p>
-                $560.00
-            </p>
-            <Image src={arrow} alt="arrow" />
+            <p>USD {formatter.format(sumTotal())}</p>
+            <Link href={{ pathname: '/checkout', query: { index: indexValue } }} passHref>
+                <Image src={arrow} alt="arrow" />
+            </Link>
         </div>
     );
 };

@@ -1,25 +1,33 @@
 @import 'vars';
 
-.Order{
+.Order {
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 16px;
     align-items: center;
     margin-bottom: 6px;
 }
-.Order p:nth-child(1){
+
+.Order p:nth-child(1) {
     display: flex;
     flex-direction: column;
 }
-.Order p:nth-child(2){
+
+.Order p:nth-child(2) {
     text-align: end;
     font-weight: bolder;
 }
-.Order p span:nth-child(1){
+
+.Order p span:nth-child(1) {
     font-size: $--md;
     font-weight: bold;
 }
-.Order p span:nth-child(2){
+
+.Order p span:nth-child(2) {
     font-size: $--sm;
     color: $--very-light-pink;
+}
+
+.Order img {
+    cursor: pointer;
 }

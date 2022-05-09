@@ -9,6 +9,7 @@ const useInitialState = () => {
   const [logged, setLogged] = useState(true);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
+  const [orders, setOrders] = useState([]);
   
   const addToCart = (payload) => {
     setState({
@@ -24,6 +25,13 @@ const useInitialState = () => {
     });
   };
 
+  const addOrder = (newOrder)=>{
+    setOrders([
+      newOrder,
+      ...orders,
+    ]);
+  };
+
   return {
     state,
     addToCart,
@@ -34,6 +42,8 @@ const useInitialState = () => {
     setToggleOrders,
     logged,
     setLogged,
+    orders,
+    addOrder,
   };
 };
 
