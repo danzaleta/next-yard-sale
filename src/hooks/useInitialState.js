@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 const InitialState = {
   cart: [],
@@ -10,6 +11,9 @@ const useInitialState = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
   const [orders, setOrders] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [category, setCategory] = useState('All');
   
   const addToCart = (payload) => {
     setState({
@@ -32,6 +36,25 @@ const useInitialState = () => {
     ]);
   };
 
+  const getProducts = (API) => {
+    async function fetchData() {
+      const response = await axios.get(API);
+      setProducts(response.data);
+      setFiltered(response.data);
+    }
+    fetchData();
+  };
+
+  const filterByCategory = (category, toFilter)=>{
+    if(category === 'All'){
+      setFiltered(products);
+      console.log('Filteeeeeer');
+    }else{
+      const newList = toFilter.filter((product)=>product?.category?.name == category);
+      setFiltered(newList);
+    }
+  };
+
   return {
     state,
     addToCart,
@@ -44,6 +67,12 @@ const useInitialState = () => {
     setLogged,
     orders,
     addOrder,
+    getProducts,
+    products,
+    filterByCategory,
+    filtered,
+    category,
+    setCategory
   };
 };
 

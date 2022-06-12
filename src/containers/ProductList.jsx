@@ -1,20 +1,26 @@
-
+import { useContext, useEffect, useState } from 'react';
+import AppContext from '@context/AppContext';
 import ProductItem from '@components/ProductItem';
-import useGetProducts from '@hooks/useGetProducts';
 import styles from '@styles/ProductList.module.scss';
-import endPoints from '@services/api';
-
-const productsAPI = endPoints.products.getProducts(100, 0);
 
 const ProductList = () => {
-  const products = useGetProducts(productsAPI);
+  const { filtered } = useContext(AppContext);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    setProducts(filtered);
+    console.log(filtered);
+  }, [filtered]);
 
   return (
     <section className={styles['main-container']}>
       <div className={styles.ProductList}>
-        {products.map((product, index) => (
-          <ProductItem product={product} indexValue={index} key={product.id} />
-        ))}
+        {(products.length != 0)
+          ? products.map((product, index) => (
+            <ProductItem product={product} indexValue={index} key={product.id} />
+          ))
+          : (<h1>No results</h1>)
+        }
       </div>
     </section>
   );

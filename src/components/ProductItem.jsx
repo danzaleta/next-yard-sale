@@ -26,8 +26,9 @@ const ProductItem = ({ product, indexValue }) => {
   return (
     <div className={styles.ProductItem}>
       <div className={styles['img-container']}>
-        <Image src={(product?.images[0].match(/https/)) ? product.images[0] : closeImg} alt={product.title} width={240} height={240}/>
+        <Image src={(product?.images[0].match(/https/)) ? product.images[0] : closeImg} alt={product.title} width={240} height={240} />
       </div>
+      <p className={styles.category}>{product?.category?.name}</p>
       <div className={styles['product-info']}>
         <div>
           <p>USD {formatter.format(product.price)}</p>

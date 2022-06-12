@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import endPoints from "@services/api";
 import MyOrder from "@containers/MyOrder";
 import Menu from "@components/Menu";
 import menu from "@icons/icon_menu.svg";
@@ -11,6 +12,7 @@ import shoppingCart from "@icons/icon_shopping_cart.svg";
 import styles from '@styles/Header.module.scss';
 
 const Header = () => {
+  const productsAPI = endPoints.products.getProducts(100, 0);
 
   const {
     state,
@@ -18,6 +20,10 @@ const Header = () => {
     toggleOrders,
     setToggleMenu,
     setToggleOrders,
+    getProducts,
+    products,
+    filterByCategory,
+    category, setCategory
   } = useContext(AppContext);
 
   const categories = [
@@ -34,6 +40,17 @@ const Header = () => {
     toggleMenu && setToggleMenu(!toggleMenu);
   };
 
+  const handleFilter =(category)=>{
+    filterByCategory(category, products);
+    setCategory(category);
+  };
+
+  useEffect(()=>{
+    getProducts(productsAPI);
+  },[productsAPI]);
+  
+  
+  
   return (
     <nav className={styles.Nav}>
       <div className={styles.menu}
@@ -53,9 +70,7 @@ const Header = () => {
           <Image onClick={()=>hangleToggle()} src={logo} alt="logo" className={styles['menu-logo']} />
         </Link>
         <ul>
-          <li>
-            {categories.map((category, index) => (<Link href="/" key={index}>{category}</Link>))}
-          </li>
+            {categories.map((categ, index) => (<li className={(categ==category)?styles.active:''} key={index} onClick={()=>handleFilter(categ)} aria-hidden="true"><Link href="/">{categ}</Link></li>))}
         </ul>
       </div>
       <div className={styles['navbar-right']}>
