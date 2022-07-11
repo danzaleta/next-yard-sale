@@ -1,3 +1,7 @@
+# LIVE DEMO: https://next-yard-sale.vercel.app/
+![image](https://user-images.githubusercontent.com/48734867/178349144-7cf353a2-ef75-47dc-b99d-3cc8e9bca472.png)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
